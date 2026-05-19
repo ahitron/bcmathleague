@@ -7,15 +7,36 @@ function formatDate(d: string) {
 }
 ---
 <Layout title="Home">
-  <h1 class="mb-4">Bergen County Math League</h1>
-  <div class="row g-4">
+  <div class="py-4 px-4 mb-5 rounded-3 bg-bcml-light bcml-accent-top">
+    <h1 class="mb-2">Bergen County Math League</h1>
+    <p class="lead text-muted mb-4">
+      A competitive math league serving approximately 30 high schools across Bergen County, NJ,
+      with monthly contests held throughout the school year.
+    </p>
+    <div class="d-flex gap-2 flex-wrap">
+      <a href="/archive" class="btn btn-bcml">
+        Contest Archive <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+      <a href="/about" class="btn btn-outline-secondary">
+        Participating Schools
+      </a>
+    </div>
+  </div>
+
+  <h2 class="h6 text-uppercase fw-semibold text-muted ls-wide mb-3">
+    <i class="bi bi-megaphone me-2"></i>Announcements
+  </h2>
+  <div class="row g-3" style="max-width: 720px">
     {announcements.map((a) => (
       <div class="col-12">
-        <div class="card">
+        <div class="card border-0 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">{a.title}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{formatDate(a.date)}</h6>
-            <p class="card-text">{a.body}</p>
+            <div class="d-flex align-items-center gap-2 text-muted small mb-2">
+              <i class="bi bi-calendar3"></i>
+              <span>{formatDate(a.date)}</span>
+            </div>
+            <h3 class="h5 mb-1">{a.title}</h3>
+            <p class="card-text text-muted mb-0">{a.body}</p>
           </div>
         </div>
       </div>

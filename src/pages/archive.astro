@@ -17,55 +17,76 @@ const years = archiveData.items.map((year) => {
   });
   return { ...year, rounds };
 });
+
+const [current, ...older] = years;
 ---
 <Layout title="Archive">
   <h1 class="mb-4">Contest Archive</h1>
-  <div class="accordion" id="archiveAccordion">
-    {years.map((year, i) => (
-      <div class="accordion-item">
-        <h2 class="accordion-header" id={`heading${year.startYear}`}>
-          <button
-            class={`accordion-button${i === 0 ? '' : ' collapsed'}`}
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target={`#collapse${year.startYear}`}
-            aria-expanded={i === 0 ? 'true' : 'false'}
-            aria-controls={`collapse${year.startYear}`}
-          >
-            {year.label}
-          </button>
-        </h2>
-        <div
-          id={`collapse${year.startYear}`}
-          class={`accordion-collapse collapse${i === 0 ? ' show' : ''}`}
-          aria-labelledby={`heading${year.startYear}`}
-          data-bs-parent="#archiveAccordion"
-        >
-          <div class="accordion-body">
-            <table class="table table-sm table-bordered">
-              <thead>
-                <tr>
-                  <th>Contest</th>
-                  <th>Solutions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {year.rounds.map((r) => (
-                  <tr>
-                    <td>
-                      {r.contestUrl
-                        ? <a href={r.contestUrl} target="_blank">Contest {r.n}</a>
-                        : '—'}
-                    </td>
-                    <td>
-                      {r.solutionsUrl
-                        ? <a href={r.solutionsUrl} target="_blank">Solutions {r.n}</a>
-                        : '—'}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+  <div class="card border-0 shadow-sm bcml-accent-top mb-5">
+    <div class="card-body p-4">
+      <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+        <h2 class="h4 mb-0" style="font-family: inherit; font-weight: 600">{current.label}</h2>
+        <span class="badge rounded-pill" style="background-color: var(--bcml-blue)">Current Year</span>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-sm align-middle mb-0">
+          <thead>
+            <tr class="table-light">
+              <th style="width: 4rem">Round</th>
+              <th>Contest</th>
+              <th>Solutions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {current.rounds.map((r) => (
+              <tr>
+                <td class="text-muted fw-semibold">{r.n}</td>
+                <td>
+                  {r.contestUrl
+                    ? <a href={r.contestUrl} target="_blank" rel="noopener" class="btn btn-sm btn-bcml">
+                        <i class="bi bi-file-earmark-pdf me-1"></i>Contest {r.n}
+                      </a>
+                    : <span class="text-muted">—</span>}
+                </td>
+                <td>
+                  {r.solutionsUrl
+                    ? <a href={r.solutionsUrl} target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-file-earmark-pdf me-1"></i>Solutions {r.n}
+                      </a>
+                    : <span class="text-muted">—</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="h6 text-uppercase fw-semibold text-muted ls-wide mb-3">Previous Years</h2>
+  <div class="row g-3">
+    {older.map((year) => (
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h3 class="h6 fw-bold text-bcml mb-3">{year.label}</h3>
+            <div class="mb-2 d-flex align-items-center flex-wrap gap-1">
+              <span class="text-muted small fw-semibold" style="min-width: 5.5rem">Contest</span>
+              {year.rounds.map((r) =>
+                r.contestUrl
+                  ? <a href={r.contestUrl} target="_blank" rel="noopener" class="badge badge-bcml">{r.n}</a>
+                  : null
+              )}
+            </div>
+            <div class="d-flex align-items-center flex-wrap gap-1">
+              <span class="text-muted small fw-semibold" style="min-width: 5.5rem">Solutions</span>
+              {year.rounds.map((r) =>
+                r.solutionsUrl
+                  ? <a href={r.solutionsUrl} target="_blank" rel="noopener" class="badge bg-secondary text-decoration-none" style="font-size: 0.8rem; padding: 0.3em 0.55em">{r.n}</a>
+                  : null
+              )}
+            </div>
           </div>
         </div>
       </div>
