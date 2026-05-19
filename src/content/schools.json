@@ -1,60 +1,62 @@
-[
-  {
-    "group": 1,
-    "schools": [
-      "Indian Hills High School",
-      "Mahwah High School",
-      "Midland Park High School",
-      "Park Ridge High School",
-      "Ramapo High School",
-      "Ramsey High School"
-    ]
-  },
-  {
-    "group": 2,
-    "schools": [
-      "Fair Lawn High School",
-      "Glen Rock High School",
-      "Paramus High School",
-      "Ridgewood High School"
-    ]
-  },
-  {
-    "group": 3,
-    "schools": [
-      "Bergenfield High School",
-      "Dumont High School",
-      "New Milford High School",
-      "River Dell High School",
-      "Tenafly High School"
-    ]
-  },
-  {
-    "group": 4,
-    "schools": [
-      "Dwight Englewood High School",
-      "Fort Lee High School",
-      "Ridgefield Memorial High School",
-      "Ridgefield Park High School"
-    ]
-  },
-  {
-    "group": 5,
-    "schools": [
-      "Becton Regional High School",
-      "Garfield High School",
-      "Lodi High School",
-      "Rutherford High School"
-    ]
-  },
-  {
-    "group": 6,
-    "schools": [
-      "Cresskill High School",
-      "Northern Valley Regional High School (Demarest)",
-      "Northern Valley Regional High School (Old Tappan)",
-      "Pascack Hills High School",
-      "Westwood High School"
-    ]
-  }
-]
+{
+  "items": [
+    {
+      "group": 1,
+      "schools": [
+        "Indian Hills High School",
+        "Mahwah High School",
+        "Midland Park High School",
+        "Park Ridge High School",
+        "Ramapo High School",
+        "Ramsey High School"
+      ]
+    },
+    {
+      "group": 2,
+      "schools": [
+        "Fair Lawn High School",
+        "Glen Rock High School",
+        "Paramus High School",
+        "Ridgewood High School"
+      ]
+    },
+    {
+      "group": 3,
+      "schools": [
+        "Bergenfield High School",
+        "Dumont High School",
+        "New Milford High School",
+        "River Dell High School",
+        "Tenafly High School"
+      ]
+    },
+    {
+      "group": 4,
+      "schools": [
+        "Dwight Englewood High School",
+        "Fort Lee High School",
+        "Ridgefield Memorial High School",
+        "Ridgefield Park High School"
+      ]
+    },
+    {
+      "group": 5,
+      "schools": [
+        "Becton Regional High School",
+        "Garfield High School",
+        "Lodi High School",
+        "Rutherford High School"
+      ]
+    },
+    {
+      "group": 6,
+      "schools": [
+        "Cresskill High School",
+        "Northern Valley Regional High School (Demarest)",
+        "Northern Valley Regional High School (Old Tappan)",
+        "Pascack Hills High School",
+        "Westwood High School"
+      ]
+    }
+  ]
+}

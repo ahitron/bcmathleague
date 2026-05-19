@@ -1,20 +1,22 @@
-[
-  { "startYear": 2025, "label": "2025-2026", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2024, "label": "2024-2025", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2023, "label": "2023-2024", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2022, "label": "2022-2023", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2021, "label": "2021-2022", "contestRounds": 5, "solutionRounds": 5 },
-  { "startYear": 2020, "label": "2020-2021", "contestRounds": 4, "solutionRounds": 4 },
-  { "startYear": 2019, "label": "2019-2020", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2018, "label": "2018-2019", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2017, "label": "2017-2018", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2016, "label": "2016-2017", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2015, "label": "2015-2016", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2014, "label": "2014-2015", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2013, "label": "2013-2014", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2012, "label": "2012-2013", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2011, "label": "2011-2012", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2010, "label": "2010-2011", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2009, "label": "2009-2010", "contestRounds": 6, "solutionRounds": 6 },
-  { "startYear": 2007, "label": "2007-2008", "contestRounds": 6, "solutionRounds": 6 }
-]
+{
+  "items": [
+    { "startYear": 2025, "label": "2025-2026", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2024, "label": "2024-2025", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2023, "label": "2023-2024", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2022, "label": "2022-2023", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2021, "label": "2021-2022", "contestRounds": 5, "solutionRounds": 5 },
+    { "startYear": 2020, "label": "2020-2021", "contestRounds": 4, "solutionRounds": 4 },
+    { "startYear": 2019, "label": "2019-2020", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2018, "label": "2018-2019", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2017, "label": "2017-2018", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2016, "label": "2016-2017", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2015, "label": "2015-2016", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2014, "label": "2014-2015", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2013, "label": "2013-2014", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2012, "label": "2012-2013", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2011, "label": "2011-2012", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2010, "label": "2010-2011", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2009, "label": "2009-2010", "contestRounds": 6, "solutionRounds": 6 },
+    { "startYear": 2007, "label": "2007-2008", "contestRounds": 6, "solutionRounds": 6 }
+  ]
+}

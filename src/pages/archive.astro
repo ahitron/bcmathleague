@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import archiveData from '../content/archive.json';
 
-const years = archiveData.map((year) => {
+const years = archiveData.items.map((year) => {
   const yy1 = String(year.startYear).slice(2);
   const yy2 = String(year.startYear + 1).slice(2);
   const prefix = `BCML${yy1}${yy2}`;
