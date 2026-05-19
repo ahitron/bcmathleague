@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import announcementsData from '../content/announcements.json';
 const announcements = announcementsData.items;
+function formatDate(d: string) {
+  return new Date(d + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
 ---
 <Layout title="Home">
   <h1 class="mb-4">Bergen County Math League</h1>
@@ -11,7 +14,7 @@ const announcements = announcementsData.items;
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">{a.title}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{a.date}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{formatDate(a.date)}</h6>
             <p class="card-text">{a.body}</p>
           </div>
         </div>
