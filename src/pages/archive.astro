@@ -45,7 +45,6 @@ const years = archiveData.items.map((year) => {
             <table class="table table-sm table-bordered">
               <thead>
                 <tr>
-                  <th>Round</th>
                   <th>Contest</th>
                   <th>Solutions</th>
                 </tr>
@@ -53,7 +52,6 @@ const years = archiveData.items.map((year) => {
               <tbody>
                 {year.rounds.map((r) => (
                   <tr>
-                    <td>{r.n}</td>
                     <td>
                       {r.contestUrl
                         ? <a href={r.contestUrl} target="_blank">Contest {r.n}</a>
