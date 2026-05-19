@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import archiveData from '../content/archive.json';
+
+const years = archiveData.map((year) => {
+  const yy1 = String(year.startYear).slice(2);
+  const yy2 = String(year.startYear + 1).slice(2);
+  const prefix = `BCML${yy1}${yy2}`;
+  const totalRounds = Math.max(year.contestRounds, year.solutionRounds);
+  const rounds = Array.from({ length: totalRounds }, (_, j) => {
+    const n = j + 1;
+    return {
+      n,
+      contestUrl: n <= year.contestRounds ? `/files/${prefix}c${n}.pdf` : null,
+      solutionsUrl: n <= year.solutionRounds ? `/files/${prefix}s${n}.pdf` : null,
+    };
+  });
+  return { ...year, rounds };
+});
+---
+<Layout title="Archive">
+  <h1 class="mb-4">Contest Archive</h1>
+  <div class="accordion" id="archiveAccordion">
+    {years.map((year, i) => (
+      <div class="accordion-item">
+        <h2 class="accordion-header" id={`heading${year.startYear}`}>
+          <button
+            class={`accordion-button${i === 0 ? '' : ' collapsed'}`}
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target={`#collapse${year.startYear}`}
+            aria-expanded={i === 0 ? 'true' : 'false'}
+            aria-controls={`collapse${year.startYear}`}
+          >
+            {year.label}
+          </button>
+        </h2>
+        <div
+          id={`collapse${year.startYear}`}
+          class={`accordion-collapse collapse${i === 0 ? ' show' : ''}`}
+          aria-labelledby={`heading${year.startYear}`}
+          data-bs-parent="#archiveAccordion"
+        >
+          <div class="accordion-body">
+            <table class="table table-sm table-bordered">
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th>Contest</th>
+                  <th>Solutions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {year.rounds.map((r) => (
+                  <tr>
+                    <td>{r.n}</td>
+                    <td>
+                      {r.contestUrl
+                        ? <a href={r.contestUrl} target="_blank">Contest {r.n}</a>
+                        : '—'}
+                    </td>
+                    <td>
+                      {r.solutionsUrl
+                        ? <a href={r.solutionsUrl} target="_blank">Solutions {r.n}</a>
+                        : '—'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>

@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/files
+public_folder: /files
+
+collections:
+  - name: announcements
+    label: Announcements
+    files:
+      - name: announcements
+        label: Announcements
+        file: src/content/announcements.json
+        fields:
+          - name: items
+            label: Announcements
+            widget: list
+            fields:
+              - { name: date, label: Date, widget: date, format: YYYY-MM-DD }
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Body, widget: text }
+
+  - name: archive
+    label: Contest Archive
+    files:
+      - name: archive
+        label: Archive Years
+        file: src/content/archive.json
+        fields:
+          - name: items
+            label: Years
+            widget: list
+            fields:
+              - { name: startYear, label: Start Year, widget: number }
+              - { name: label, label: "Label (e.g. 2025-2026)", widget: string }
+              - { name: contestRounds, label: Contest Rounds Available, widget: number, default: 6 }
+              - { name: solutionRounds, label: Solution Rounds Available, widget: number, default: 6 }
+
+  - name: schools
+    label: Participating Schools
+    files:
+      - name: schools
+        label: Schools by Group
+        file: src/content/schools.json
+        fields:
+          - name: items
+            label: Groups
+            widget: list
+            fields:
+              - { name: group, label: Group Number, widget: number }
+              - name: schools
+                label: Schools
+                widget: list
+                field: { name: name, label: School Name, widget: string }

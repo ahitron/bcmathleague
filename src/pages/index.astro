@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import announcements from '../content/announcements.json';
+---
+<Layout title="Home">
+  <h1 class="mb-4">Bergen County Math League</h1>
+  <div class="row g-4">
+    {announcements.map((a) => (
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{a.title}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{a.date}</h6>
+            <p class="card-text">{a.body}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>

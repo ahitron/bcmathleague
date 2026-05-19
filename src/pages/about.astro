@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import schools from '../content/schools.json';
+---
+<Layout title="About">
+  <h1 class="mb-4">Participating Schools</h1>
+  <div class="accordion" id="schoolsAccordion">
+    {schools.map((g, i) => {
+      const collapseId = `collapseGroup${g.group}`;
+      const headingId = `headingGroup${g.group}`;
+      return (
+        <div class="accordion-item">
+          <h2 class="accordion-header" id={headingId}>
+            <button
+              class={`accordion-button${i === 0 ? '' : ' collapsed'}`}
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target={`#${collapseId}`}
+              aria-expanded={i === 0 ? 'true' : 'false'}
+              aria-controls={collapseId}
+            >
+              Group {g.group}
+            </button>
+          </h2>
+          <div
+            id={collapseId}
+            class={`accordion-collapse collapse${i === 0 ? ' show' : ''}`}
+            aria-labelledby={headingId}
+            data-bs-parent="#schoolsAccordion"
+          >
+            <div class="accordion-body">
+              <ul class="list-unstyled mb-0">
+                {g.schools.map((school) => (
+                  <li>{school}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</Layout>
